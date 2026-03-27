@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>235 West 23rd Street — Full Building Opportunity | Chelsea, NYC</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: #000;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+a { color: #2D8CFF; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ===== NAV ===== */
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: rgba(0,0,0,0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid #222;
+  padding: 16px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background 0.3s;
+}
+.nav-logo {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: #fff;
+  letter-spacing: 1px;
+}
+.nav-logo span { color: #2D8CFF; }
+.nav-links { display: flex; gap: 30px; }
+.nav-links a {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #a8a8a8;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: #2D8CFF; text-decoration: none; }
+.nav-cta {
+  background: #2D8CFF;
+  color: #fff !important;
+  padding: 10px 24px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: background 0.2s;
+}
+.nav-cta:hover { background: #1a6fd4; text-decoration: none; }
+
+/* ===== HERO ===== */
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+}
+.hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.hero-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.7) 50%, rgba(0,0,0,0.9) 100%);
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 120px 40px 80px;
+  max-width: 900px;
+}
+.hero-pre {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: clamp(28px, 5vw, 48px);
+  text-transform: uppercase;
+  line-height: 1.1;
+  margin-bottom: 20px;
+  text-shadow: 0 2px 40px rgba(0,0,0,0.5);
+}
+.hero-number {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: clamp(80px, 15vw, 140px);
+  line-height: 1;
+  letter-spacing: -3px;
+  text-shadow: 0 0 80px rgba(45,140,255,0.2);
+}
+.hero-street {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: clamp(24px, 4vw, 44px);
+  letter-spacing: 4px;
+  margin-top: 8px;
+}
+.hero-tagline {
+  font-weight: 600;
+  font-size: clamp(14px, 2vw, 20px);
+  color: #2D8CFF;
+  margin-top: 40px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+}
+.hero-sub {
+  font-weight: 300;
+  font-size: 15px;
+  color: #a8a8a8;
+  margin-top: 16px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+.hero-scroll {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  animation: bounce 2s infinite;
+}
+.hero-scroll span {
+  display: block;
+  width: 24px;
+  height: 40px;
+  border: 2px solid #a8a8a8;
+  border-radius: 12px;
+  position: relative;
+}
+.hero-scroll span::after {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 8px;
+  background: #2D8CFF;
+  border-radius: 2px;
+  animation: scroll-dot 2s infinite;
+}
+@keyframes bounce { 0%,100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(8px); } }
+@keyframes scroll-dot { 0% { opacity: 1; top: 8px; } 100% { opacity: 0; top: 22px; } }
+
+/* ===== SECTIONS ===== */
+.section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 80px 40px;
+}
+.section-label {
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: #2D8CFF;
+  margin-bottom: 16px;
+}
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: clamp(28px, 4vw, 42px);
+  line-height: 1.2;
+  margin-bottom: 24px;
+}
+.section-divider {
+  width: 100%;
+  height: 1px;
+  background: #222;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ===== OPPORTUNITY ===== */
+.opportunity-text {
+  font-size: 17px;
+  line-height: 1.9;
+  color: #a8a8a8;
+  max-width: 800px;
+}
+.opportunity-text strong { color: #fff; font-weight: 600; }
+
+/* ===== STACKING PLAN ===== */
+.stacking-total {
+  text-align: center;
+  padding: 40px;
+  background: #0a0a0a;
+  border: 1px solid #222;
+  border-radius: 12px;
+  margin-bottom: 40px;
+}
+.stacking-total-label {
+  font-weight: 600; font-size: 12px; letter-spacing: 5px;
+  text-transform: uppercase; color: #a8a8a8;
+}
+.stacking-total-number {
+  font-family: 'Playfair Display', serif; font-weight: 900;
+  font-size: 56px; color: #2D8CFF; margin-top: 8px;
+}
+.stacking-total-unit {
+  font-size: 16px; color: #a8a8a8; letter-spacing: 3px;
+}
+.stacking-wrapper {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  border: 1px solid #222;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.building-drawing {
+  background: #0a0a0a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+}
+.building-inner {
+  width: 140px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.bld-roofdeck { width: 140px; height: 14px; display: flex; flex-shrink: 0; }
+.bld-roofdeck-green {
+  width: 50%;
+  background: linear-gradient(90deg, #2d6a2d, #3a8a3a, #2d6a2d);
+  border-radius: 3px 0 0 0;
+  border-top: 2px solid #4a9a4a;
+}
+.bld-roofdeck-flat {
+  width: 50%;
+  background: #a8a8a860;
+  border-radius: 0 3px 0 0;
+  border-top: 2px solid #a8a8a880;
+}
+.bld-roof {
+  width: 140px; height: 10px; flex-shrink: 0;
+  background: #a8a8a870;
+  border-bottom: 2px solid #a8a8a890;
+}
+.bld-floor {
+  flex: 1; width: 140px;
+  border-left: 3px solid #a8a8a870;
+  border-right: 3px solid #a8a8a870;
+  display: flex; align-items: center; justify-content: center; gap: 6px;
+}
+.bld-floor-ph { background: rgba(45,140,255,0.1); }
+.bld-floor-gnd {
+  background: rgba(255,255,255,0.75);
+  border-bottom: 2px solid #a8a8a860;
+}
+.bld-floor-ll {
+  background: #a8a8a825;
+  border-bottom: 3px solid #a8a8a850;
+  border-radius: 0 0 2px 2px;
+}
+.bld-window {
+  width: 13px; height: 55%;
+  background: #fff; border: 1px solid #fff; border-radius: 1px;
+}
+.floor-rows {
+  display: flex; flex-direction: column;
+  border-left: 1px solid #222;
+}
+.floor-rows .spacer { height: 24px; flex-shrink: 0; background: #0a0a0a; }
+.floor-row {
+  display: grid;
+  grid-template-columns: 50px 1fr 140px;
+  align-items: center;
+  padding: 0 16px;
+  flex: 1;
+  border-bottom: 1px solid #22222030;
+  transition: background 0.2s;
+}
+.floor-row:hover { background: rgba(45,140,255,0.05); }
+.floor-row:last-child { border-bottom: none; }
+.floor-row-ph { background: rgba(45,140,255,0.06); }
+.floor-row-alt { background: #060606; }
+.floor-row-base { background: #0a0a0a; }
+.floor-name {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700; font-size: 20px;
+}
+.floor-details { padding: 0 12px; }
+.floor-rsf { font-weight: 700; font-size: 14px; }
+.floor-ceiling { font-weight: 500; font-size: 11px; color: #a8a8a8; margin-top: 2px; }
+.floor-ceiling.accent { color: #2D8CFF; font-weight: 700; }
+.status-badge {
+  display: inline-block;
+  width: 120px;
+  padding: 5px 0;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-radius: 3px;
+}
+.badge-green { background: rgba(39,174,96,0.15); color: #27ae60; border: 1px solid rgba(39,174,96,0.3); }
+.badge-yellow { background: rgba(201,168,76,0.15); color: #c9a84c; border: 1px solid rgba(201,168,76,0.3); }
+
+/* ===== HIGHLIGHTS ===== */
+.highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+.highlight-card {
+  background: #0a0a0a;
+  border: 1px solid #222;
+  border-radius: 12px;
+  padding: 32px 28px;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.3s, transform 0.2s;
+}
+.highlight-card:hover { border-color: #2D8CFF40; transform: translateY(-2px); }
+.highlight-card::before {
+  content: ''; position: absolute;
+  top: 0; left: 0; width: 3px; height: 100%;
+  background: #2D8CFF;
+}
+.highlight-icon { font-size: 28px; margin-bottom: 12px; }
+.highlight-title {
+  font-weight: 700; font-size: 14px;
+  text-transform: uppercase; letter-spacing: 1.5px;
+  margin-bottom: 8px;
+}
+.highlight-desc { font-size: 13px; color: #a8a8a8; line-height: 1.6; }
+
+/* ===== IDEAL FOR ===== */
+.ideal-grid {
+  display: flex; flex-wrap: wrap; gap: 14px;
+  justify-content: center;
+}
+.ideal-badge {
+  font-weight: 700; font-size: 13px; letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 16px 28px;
+  border: 2px solid #2D8CFF;
+  border-radius: 6px;
+  color: #2D8CFF;
+  background: rgba(45,140,255,0.08);
+  transition: background 0.2s, transform 0.2s;
+  cursor: default;
+}
+.ideal-badge:hover { background: rgba(45,140,255,0.15); transform: scale(1.03); }
+
+/* ===== PHOTOS ===== */
+.photo-showcase img {
+  width: 100%;
+  display: block;
+  border-radius: 10px;
+  border: 1px solid #222;
+  margin-bottom: 20px;
+  transition: transform 0.3s;
+}
+.photo-showcase img:hover { transform: scale(1.005); }
+
+/* ===== FLOOR PLANS ===== */
+.floorplan-block {
+  max-width: 700px;
+  margin: 40px auto;
+  text-align: center;
+}
+.floorplan-block h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #2D8CFF;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+.floorplan-block img { width: 100%; display: block; border-radius: 6px; }
+
+/* ===== MAP ===== */
+.map-section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 80px 40px 40px;
+  text-align: center;
+}
+.map-section img {
+  width: 100%;
+  max-width: 900px;
+  display: block;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 30px 40px 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  border-top: 1px solid #222;
+}
+.broker-grid { display: flex; gap: 50px; }
+.broker-name { font-weight: 700; font-size: 14px; margin-bottom: 4px; }
+.broker-phone { font-size: 13px; color: #a8a8a8; margin-bottom: 2px; }
+.broker-email { font-size: 13px; }
+.footer-logo img { width: 110px; }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .hero-bg { grid-template-columns: 1fr; }
+  .hero-bg img:first-child { display: none; }
+  .stacking-wrapper { grid-template-columns: 1fr; }
+  .building-drawing { display: none; }
+  .footer { flex-direction: column; text-align: center; }
+  .broker-grid { flex-direction: column; gap: 20px; }
+  .section { padding: 60px 24px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-logo"><span>235</span> West 23rd</div>
+  <div class="nav-links">
+    <a href="#opportunity">Overview</a>
+    <a href="#availability">Availability</a>
+    <a href="#highlights">Highlights</a>
+    <a href="#photos">Photos</a>
+    <a href="#plans">Floor Plans</a>
+    <a href="#neighborhood">Neighborhood</a>
+  </div>
+  <a href="#contact" class="nav-cta">Contact</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-bg">
+    <img src="images/hero-building.jpg" alt="235 West 23rd Street">
+    <img src="images/hero-street.jpg" alt="Chelsea Hotel Street View">
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-pre">A Full-Building<br>Opportunity</div>
+    <div class="hero-number">235</div>
+    <div class="hero-street">WEST 23RD STREET</div>
+    <div class="hero-tagline">Control Your Building in Chelsea</div>
+    <div class="hero-sub">Directly Across from the Legendary Chelsea Hotel</div>
+  </div>
+  <div class="hero-scroll"><span></span></div>
+</section>
+
+<!-- OPPORTUNITY -->
+<div class="section-divider"></div>
+<section class="section" id="opportunity">
+  <div class="section-label">The Opportunity</div>
+  <div class="opportunity-text">
+    A rare opportunity to <strong>command a full-building presence</strong> in the heart of Chelsea &mdash; directly across from the legendary Chelsea Hotel. With <strong>55,362 RSF</strong> including soaring 16&rsquo; ceilings on the penthouse floor, this is one of the few remaining opportunities in Manhattan to consolidate your entire organization under one roof. Ideal for a school, non-profit headquarters, medical facility, fashion house, AI company, or any organization seeking a <strong>flagship identity building</strong> in one of Manhattan&rsquo;s most dynamic neighborhoods. The landlord will consider leasing floors individually.
+  </div>
+</section>
+
+<!-- STACKING PLAN -->
+<div class="section-divider"></div>
+<section class="section" id="availability">
+  <div class="section-label">Availability Stacking Plan</div>
+  <div class="stacking-total">
+    <div class="stacking-total-label">Total Block Available</div>
+    <div class="stacking-total-number">55,362</div>
+    <div class="stacking-total-unit">RENTABLE SQUARE FEET</div>
+  </div>
+  <div class="stacking-wrapper">
+    <div class="building-drawing">
+      <div class="building-inner">
+        <div class="bld-roofdeck"><div class="bld-roofdeck-green"></div><div class="bld-roofdeck-flat"></div></div>
+        <div class="bld-roof"></div>
+        <div class="bld-floor bld-floor-ph"><div class="bld-window"></div><div class="bld-window"></div><div class="bld-window"></div><div class="bld-window"></div><div class="bld-window"></div><div class="bld-window"></div><div class="bld-window"></div></div>
+        <div class="bld-floor"><div class="bld-window"></div><div class="bld-window"></div><div class="bld-window"></div><div class="bld-window"></div><div class="bld-window"></div><div class="bld-window"></div><div class="bld-window"></div></div>
+        <div class="bld-floor"><div class="bld-window"></div><div class="bld-window"></div><div class="bld-window"></div><div class="bld-window"></div><div class="bld-window"></div><div class="bld-window"></div><div class="bld-window"></div></div>
+        <div class="bld-floor"><div class="bld-window"></div><div class="bld-window"></div><div class="bld-window"></div><div class="bld-window"></div><div class="bld-window"></div><div class="bld-window"></div><div class="bld-window"></div></div>
+        <div class="bld-floor"><div class="bld-window"></div><div class="bld-window"></div><div class="bld-window"></div><div class="bld-window"></div><div class="bld-window"></div><div class="bld-window"></div><div class="bld-window"></div></div>
+        <div class="bld-floor"><div class="bld-window"></div><div class="bld-window"></div><div class="bld-window"></div><div class="bld-window"></div><div class="bld-window"></div><div class="bld-window"></div><div class="bld-window"></div></div>
+        <div class="bld-floor"><div class="bld-window"></div><div class="bld-window"></div><div class="bld-window"></div><div class="bld-window"></div><div class="bld-window"></div><div class="bld-window"></div><div class="bld-window"></div></div>
+        <div class="bld-floor bld-floor-gnd"></div>
+        <div class="bld-floor bld-floor-ll"></div>
+      </div>
+    </div>
+    <div class="floor-rows">
+      <div class="spacer"></div>
+      <div class="floor-row floor-row-ph"><div class="floor-name">8</div><div class="floor-details"><div class="floor-rsf">6,766 RSF</div><div class="floor-ceiling accent">16&rsquo; Ceilings</div></div><div><span class="status-badge badge-yellow">OCT 2027</span></div></div>
+      <div class="floor-row floor-row-alt"><div class="floor-name">7</div><div class="floor-details"><div class="floor-rsf">6,766 RSF</div><div class="floor-ceiling">12&rsquo; Ceilings</div></div><div><span class="status-badge badge-green">AVAILABLE</span></div></div>
+      <div class="floor-row floor-row-base"><div class="floor-name">6</div><div class="floor-details"><div class="floor-rsf">6,766 RSF</div><div class="floor-ceiling">12&rsquo; Ceilings</div></div><div><span class="status-badge badge-green">VACANT</span></div></div>
+      <div class="floor-row floor-row-alt"><div class="floor-name">5</div><div class="floor-details"><div class="floor-rsf">6,766 RSF</div><div class="floor-ceiling">12&rsquo; Ceilings</div></div><div><span class="status-badge badge-green">VACANT</span></div></div>
+      <div class="floor-row floor-row-base"><div class="floor-name">4</div><div class="floor-details"><div class="floor-rsf">6,766 RSF</div><div class="floor-ceiling">12&rsquo; Ceilings</div></div><div><span class="status-badge badge-green">VACANT</span></div></div>
+      <div class="floor-row floor-row-alt"><div class="floor-name">3</div><div class="floor-details"><div class="floor-rsf">6,766 RSF</div><div class="floor-ceiling">12&rsquo; Ceilings</div></div><div><span class="status-badge badge-green">VACANT</span></div></div>
+      <div class="floor-row floor-row-base"><div class="floor-name">2</div><div class="floor-details"><div class="floor-rsf">6,766 RSF</div><div class="floor-ceiling">12&rsquo; Ceilings</div></div><div><span class="status-badge badge-green">VACANT</span></div></div>
+      <div class="floor-row floor-row-alt"><div class="floor-name">GND</div><div class="floor-details"><div class="floor-rsf">5,000 RSF</div><div class="floor-ceiling">15&rsquo; Ceilings</div></div><div><span class="status-badge badge-yellow">JAN 2028</span></div></div>
+      <div class="floor-row floor-row-base"><div class="floor-name">LL</div><div class="floor-details"><div class="floor-rsf">3,000 RSF</div><div class="floor-ceiling">10&rsquo; Ceilings</div></div><div><span class="status-badge badge-yellow">JAN 2028</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- HIGHLIGHTS -->
+<div class="section-divider"></div>
+<section class="section" id="highlights">
+  <div class="section-label">Building Highlights</div>
+  <div class="highlights-grid">
+    <div class="highlight-card">
+      <div class="highlight-icon">&uarr;</div>
+      <div class="highlight-title">Exceptional Ceiling Heights</div>
+      <div class="highlight-desc">12&rsquo; ceilings throughout, with a spectacular 16&rsquo; ceiling penthouse on the 8th floor.</div>
+    </div>
+    <div class="highlight-card">
+      <div class="highlight-icon">&#9737;</div>
+      <div class="highlight-title">Roofdeck Potential</div>
+      <div class="highlight-desc">Potential to create a stunning roofdeck with exceptional views.</div>
+    </div>
+    <div class="highlight-card">
+      <div class="highlight-icon">&#9733;</div>
+      <div class="highlight-title">Lobby Control &amp; Signage</div>
+      <div class="highlight-desc">Full branding opportunity for a building tenant. Make it yours.</div>
+    </div>
+    <div class="highlight-card">
+      <div class="highlight-icon">&#8644;</div>
+      <div class="highlight-title">Flexible Leasing</div>
+      <div class="highlight-desc">Can be leased together or individually. Landlord will consider reasonable divisions.</div>
+    </div>
+    <div class="highlight-card">
+      <div class="highlight-icon">&#9872;</div>
+      <div class="highlight-title">Landmark Location</div>
+      <div class="highlight-desc">Directly across from the iconic Chelsea Hotel in the heart of Chelsea.</div>
+    </div>
+    <div class="highlight-card">
+      <div class="highlight-icon">&#9724;</div>
+      <div class="highlight-title">Large Windows</div>
+      <div class="highlight-desc">Abundant natural light.</div>
+    </div>
+    <div class="highlight-card">
+      <div class="highlight-icon">&#10052;</div>
+      <div class="highlight-title">Tenant-Controlled HVAC</div>
+      <div class="highlight-desc">Independent climate control on each floor for maximum comfort and flexibility.</div>
+    </div>
+    <div class="highlight-card">
+      <div class="highlight-icon">&#9733;</div>
+      <div class="highlight-title">Great Transportation</div>
+      <div class="highlight-desc">The 23rd Street corridor offers excellent subway access &mdash; C/E, 1, F/M, R/W, and PATH all nearby.</div>
+    </div>
+  </div>
+</section>
+
+<!-- IDEAL FOR -->
+<div class="section-divider"></div>
+<section class="section" style="text-align:center;">
+  <div class="section-label">Ideal For</div>
+  <div class="section-title">Who Belongs at 235 West 23rd?</div>
+  <div class="ideal-grid">
+    <div class="ideal-badge">Non-Profit</div>
+    <div class="ideal-badge">Medical</div>
+    <div class="ideal-badge">Education / School</div>
+    <div class="ideal-badge">AI / Tech</div>
+    <div class="ideal-badge">Headquarters</div>
+    <div class="ideal-badge">Fashion</div>
+    <div class="ideal-badge">Creative Agency</div>
+    <div class="ideal-badge">Experiential / Museum</div>
+  </div>
+</section>
+
+<!-- 8TH FLOOR PHOTOS -->
+<div class="section-divider"></div>
+<section class="section" id="photos">
+  <div class="section-label">8th Floor Images</div>
+  <div class="photo-showcase">
+    <img src="images/8th-lounge.jpg" alt="8th Floor Lounge">
+    <img src="images/8th-workspace.jpg" alt="8th Floor Workspace">
+  </div>
+</section>
+
+<!-- FLOOR PLANS -->
+<div class="section-divider"></div>
+<section class="section" id="plans">
+  <div class="section-label">Floor Plans &amp; Test Fits</div>
+  <div class="section-title">Visualize the Space</div>
+  <div class="floorplan-block">
+    <h3>Typical Floor &mdash; Test Fit</h3>
+    <img src="images/testfit.png" alt="Test Fit">
+  </div>
+  <div class="floorplan-block">
+    <h3>Typical Floor &mdash; Core &amp; Shell</h3>
+    <img src="images/core-shell.jpg" alt="Core Shell">
+  </div>
+</section>
+
+<!-- NEIGHBORHOOD -->
+<div class="section-divider"></div>
+<section class="map-section" id="neighborhood">
+  <div class="section-label">Neighborhood</div>
+  <div class="section-title">The Heart of Chelsea</div>
+  <img src="images/neighborhood-map.png" alt="Chelsea Neighborhood Map">
+</section>
+
+<!-- FOOTER / CONTACT -->
+<div class="section-divider"></div>
+<footer class="footer" id="contact">
+  <div class="broker-grid">
+    <div>
+      <div class="broker-name">Ross Eisenberg</div>
+      <div class="broker-phone">347-927-7220</div>
+      <a href="mailto:Ross@RDEadvisors.com" class="broker-email">Ross@RDEadvisors.com</a>
+    </div>
+    <div>
+      <div class="broker-name">Jeremy Birns</div>
+      <div class="broker-phone">201-655-5092</div>
+      <a href="mailto:Jeremy@RDEadvisors.com" class="broker-email">Jeremy@RDEadvisors.com</a>
+    </div>
+  </div>
+  <div class="footer-logo">
+    <img src="images/rde-logo.png" alt="RDE Advisors, Inc.">
+  </div>
+</footer>
+
+</body>
+</html>
